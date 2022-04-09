@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import { useState } from "react";
+import './Submit.css';
 
 export default function Submit() {
   const [inputs, setInputs] = useState({});
@@ -19,19 +20,21 @@ export default function Submit() {
   }
   return (
     <form onSubmit={handleSubmit}>
+      <div className='form-box'>
       <label>Title:
-        <input type="text" name="title" value={inputs.title || ""} onChange={handleChange} />
+        <input placeholder="Title" type="text" name="title" value={inputs.title || ""} onChange={handleChange} />
       </label>
       <label>Description:
-        <input type="text" name="description" value={inputs.description || ""} onChange={handleChange} />
+        <textarea placeholder="Description" type="text" name="description" value={inputs.description || ""} onChange={handleChange} />
       </label>
       <label>Address:
-        <input type="text" name="address" value={inputs.address || ""} onChange={handleChange} />
+        <input placeholder="Address" type="text" name="address" value={inputs.address || ""} onChange={handleChange} />
       </label>
       <label>Image:
         <input type="file" name="img" value={inputs.img || ""} onChange={handleChange} />
       </label>
-        <input type="submit" />
+        <input className="subBtn" type="submit" />
+      </div>
     </form>
   )
 }
