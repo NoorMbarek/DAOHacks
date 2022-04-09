@@ -40,10 +40,13 @@
 .form-box textarea{
     height: 15vh;
 }
+.gray_back{
+    background-color: rgb(235, 235, 235);
+}
 
 .subBtn{
     position: relative;
-    background-color: #045faa;
+    background-color: #0768b8;
     border: none;
     font-size: 28px;
     color: #FFFFFF;

@@ -22,16 +22,16 @@ export default function Submit() {
     <form onSubmit={handleSubmit}>
       <div className='form-box'>
       <label>Title:
-        <input placeholder="Title" type="text" name="title" value={inputs.title || ""} onChange={handleChange} />
+        <input className='gray_back' placeholder="Title" type="text" name="title" value={inputs.title || ""} onChange={handleChange} />
       </label>
       <label>Description:
-        <textarea placeholder="Description" type="text" name="description" value={inputs.description || ""} onChange={handleChange} />
+        <textarea className='gray_back' placeholder="Description" type="text" name="description" value={inputs.description || ""} onChange={handleChange} />
       </label>
       <label>Address:
-        <input placeholder="Address" type="text" name="address" value={inputs.address || ""} onChange={handleChange} />
+        <input className='gray_back' placeholder="Address" type="text" name="address" value={inputs.address || ""} onChange={handleChange} />
       </label>
       <label>Image:
-        <input type="file" name="img" value={inputs.img || ""} onChange={handleChange} />
+        <input className='gray_back' type="file" name="img" value={inputs.img || ""} onChange={handleChange} />
       </label>
         <input className="subBtn" type="submit" />
       </div>
