@@ -4,12 +4,23 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { ethers } from "ethers";
 
-function clickme(){alert('you clicked me');}
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [currentAccount, setCurrentAccount] = useState("");
+
+
+  useEffect(() => {
+    if (window.ethereum) {
+      window.ethereum.on('chainChanged', () => {
+        window.location.reload();
+      })
+      window.ethereum.on('accountsChanged', () => {
+        window.location.reload();
+      })
+    }
+  })
 
 
 
@@ -34,7 +45,10 @@ function Navbar() {
         console.log(error);
     }
   };
-  
+
+  function clickme() {
+    connectWallet();
+  }
   const checkIfWalletIsConnected = async () => {
     const { ethereum } = window;
   
@@ -61,6 +75,7 @@ function Navbar() {
         console.log("No authorized account found");
     }
   };
+  let authenticated = currentAccount == "" ? false : true;
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -74,10 +89,11 @@ function Navbar() {
       setButton(true);
     }
   };
-
   useEffect(() => {
     showButton();
   }, []);
+
+
 
   window.addEventListener('resize', showButton);
 
@@ -118,8 +134,9 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button onClick={clickme} buttonStyle='btn--outline'>Connect Metamask</Button>}
-        </div>
+
+          {button && !authenticated && <Button onClick={clickme} buttonStyle='btn--outline'>Connect Metamask</Button>}
+          {authenticated && <h4 className='metamask'>{currentAccount.substring(0, 10) + "..."}</h4>}        </div>
       </nav>
     </>
   );

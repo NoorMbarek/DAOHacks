@@ -7,11 +7,12 @@ import Submit from './components/pages/Submit';
 import SignUp from './components/pages/SignUp';
 import Project from './components/pages/Project';
 import Cards from './components/Cards';
-
+import {Toaster} from "react-hot-toast"
 function App() {
   return (
     <>
       <Router>
+        <Toaster/>
         <Navbar />
         <Routes>
           <Route path='/' element={<Explore/>} />
