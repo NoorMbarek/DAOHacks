@@ -12,7 +12,6 @@
     margin: 0vw;
     padding: 10vw ;
     position:relative; 
-    border-color:aqua;
     /* position:relative for .prevBtn and .nextBtn position:absolute; */
 }
 .form-box h5{
@@ -44,7 +43,7 @@
 
 .subBtn{
     position: relative;
-    background-color: #04AA6D;
+    background-color: #045faa;
     border: none;
     font-size: 28px;
     color: #FFFFFF;
@@ -58,13 +57,13 @@
     cursor: pointer;
 }
 .subBtn:hover {
-    background: #90EE90;
+    background: #4e82ac;
     box-shadow: 0px 1px 5px 2px #FFFFFF;
     color: #000;
   }
 .subBtn:after {
     content: "";
-    background: #90EE90;
+    background: #4e82ac;
     display: block;
     position: absolute;
     padding-top: 300%;
