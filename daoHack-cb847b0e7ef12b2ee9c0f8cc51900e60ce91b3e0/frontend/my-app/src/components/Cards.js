@@ -644,9 +644,8 @@ async function CreateProposal(recipient,flowRate){
   const ProjectToFundAdress =recipient;
   
   const contract = new ethers.Contract(StreamFundAdress,ABI,signer)
-  
-
   const tx = await contract.issueNFT(ProjectToFundAdress,flowRate);
+  
   await tx.wait();
 
   } catch (error) {
