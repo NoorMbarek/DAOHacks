@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Web3Storage } from 'web3.storage';
 
 
+
 function getAccessToken() {
   return 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweEU0RDU1OENjNGEyZGU4ODg2MGU0M2JkMDhGNDM3Y2NmMDRGN0Y5Q2IiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NDk1MDIyMTQwNjAsIm5hbWUiOiJ0ZXN0In0.maFSn8Y-xBvN8UQhnb_44NHZRVLu90u-E-R-4u089es'
 }
@@ -33,7 +34,7 @@ function Cards() {
   return (
     <div className='cards'>
       <h1>Check out these EPIC Projects!</h1>
-      <div className='cards__container'>
+      <div className='card-columns'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
           {
@@ -46,6 +47,8 @@ function Cards() {
             />;
           })
           }
+          </ul>
+          <ul className='cards__items'>
             <CardItem
               src='/images/peeposhy.jpg'
               text='A shy peepo'
@@ -67,6 +70,8 @@ function Cards() {
               path='/services'
               id='3'
             />
+            </ul>
+            <ul className='cards__items'>
              <CardItem
               src='/images/peeposhy.jpg'
               text='A shy peepo'
