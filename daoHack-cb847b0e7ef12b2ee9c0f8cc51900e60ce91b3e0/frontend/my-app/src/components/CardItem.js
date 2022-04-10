@@ -22,7 +22,7 @@ function CardItem(props) {
           
           <div className='cards__item__info'>
             <h3>{props.title}</h3>
-            <h4>{props.adress}</h4>
+            {/* <h4>{props.adress}</h4> */}
             <h5 className='cards__item__text'>{props.text}</h5>
             <p align='center'><button onClick={props.requestProposal} className="invBtn">Investment Proposal</button></p>
           </div>
