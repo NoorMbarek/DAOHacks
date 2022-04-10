@@ -1,6 +1,9 @@
 .cards {
   padding: 4rem;
   background: #fff;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
 }
 
 h1 {
@@ -14,15 +17,22 @@ h1 {
   max-width: 1120px;
   width: 90%;
   margin: 0 auto;
+  
 }
 
 .cards__wrapper {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(12rem,16rem));
+  gap:2rem;
   position: relative;
   margin: 50px 0 45px;
+  overflow-y: hidden;
 }
 
 .cards__items {
   margin-bottom: 24px;
+  display:flex;
+  
 }
 
 .cards__item {
