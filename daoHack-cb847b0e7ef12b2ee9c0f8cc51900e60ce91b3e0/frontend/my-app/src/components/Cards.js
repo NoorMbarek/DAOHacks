@@ -7,7 +7,6 @@ import { Web3Storage } from 'web3.storage';
 
 
 function CardsContainer(props) {
-console.log(props.data)
 
   return (<div>
     <div className='cards'>
@@ -19,10 +18,13 @@ console.log(props.data)
             {props.data.map((x) => (
               <CardItem
                 src={"https://" + x.cid + ".ipfs.dweb.link/Image.png" }
-                text={x.title}
+                title={x.title}
+                text={x.description}
+                //adress={x.walletAdress}
                 label='cute'
                 path="/show_proj/"
-                id={x.WalletAdress}
+                id={x.walletAdress}
+                requestProposal={()=>alert("click me ")}
               />
             ))}
 
